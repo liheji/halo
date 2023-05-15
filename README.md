@@ -22,9 +22,24 @@
 
 ------------------------------
 
-## 快速开始
+## 快速开始【halo-1.6】
 
 详细部署文档请查阅：<https://docs.halo.run>
+
+## 新增功能
+### 1. 后台新增功能
++ 模板标签 postTag 新增方法 lastProp，即排序prop字段，获取最后几条数据
+    + prop字段即表的字段名，包括 visits，likes，update_time等，请参考数据库表
+    + top字段即获取条数
+
+```html
+<@postTag method="lastProp" prop="visits" top="获取条数">
+// do something
+</@postTag>
+```
+
+### 2. 管理员前端新增功能
+自动解析文章中的图片链接为封面的选择列表,具体参考[halo-admin](https://github.com/liheji/halo-admin.git)
 
 ## 在线体验
 

@@ -61,6 +61,13 @@ public class PostTagDirective implements TemplateDirectiveModel {
                     env.setVariable("posts", builder.build()
                         .wrap(postRenderAssembler.convertToListVo(postService.listLatest(top))));
                     break;
+                // TODO add more methods
+                case "lastProp":
+                    String prop = params.get("prop").toString();
+                    int limit = Integer.parseInt(params.get("top").toString());
+                    env.setVariable("posts", builder.build()
+                        .wrap(postRenderAssembler.convertToListVo(postService.listLastProp(prop, limit))));
+                    break;
                 case "count":
                     env.setVariable("count",
                         builder.build().wrap(postService.countByStatus(PostStatus.PUBLISHED)));

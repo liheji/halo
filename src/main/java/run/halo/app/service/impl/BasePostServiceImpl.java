@@ -231,6 +231,16 @@ public abstract class BasePostServiceImpl<POST extends BasePost>
     }
 
     @Override
+    public List<POST> listLastProp(String prop, int top){
+        Assert.isTrue(top > 0, "Top number must not be less than 0");
+        Assert.hasText(prop, "Prop must not be blank");
+
+        PageRequest latestPageable = PageRequest.of(0, top, Sort.by(DESC, prop));
+        return basePostRepository.findAllByStatus(PostStatus.PUBLISHED, latestPageable)
+            .getContent();
+    }
+
+    @Override
     public Page<POST> pageBy(Pageable pageable) {
         Assert.notNull(pageable, "Page info must not be null");
 

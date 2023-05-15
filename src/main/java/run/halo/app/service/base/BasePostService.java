@@ -164,6 +164,16 @@ public interface BasePostService<POST extends BasePost> extends CrudService<POST
     List<POST> listLatest(int top);
 
     /**
+     * Lists latest posts.
+     *
+     * @param prop prop last sort by prop
+     * @param top top number must not be less than 0
+     * @return latest posts
+     */
+    @NonNull
+    List<POST> listLastProp(String prop, int top);
+
+    /**
      * Gets a page of sheet.
      *
      * @param pageable page info must not be null

@@ -61,6 +61,7 @@ nbdist/
 *.zip
 *.tar.gz
 *.rar
+*.tar
 
 ### VSCode
 .vscode

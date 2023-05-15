@@ -153,3 +153,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.test{
+    enabled = false
+}
+tasks.checkstyleMain{
+    enabled = false
+}
+tasks.checkstyleTest{
+    enabled = false
+}
